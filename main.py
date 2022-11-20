@@ -1,16 +1,20 @@
-# This is a sample Python script.
+import random
+import sys
+nombre_mystere = random.randrange(0, 100)
+chance = 5
+tentative = ""
+print("*** Le jeu du nombre Mystere ***")
 
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+while chance > 0:
+    tentative = input("Devine le nombre")
+    if int(tentative) == nombre_mystere:
+        print("tu as gagne")
+        sys.exit("Fin de partie")
+    else:
+        chance = chance - 1
+        if int(tentative) > nombre_mystere:
+            print("Le nombre mystere est inferieur")
+        elif int(tentative) < nombre_mystere:
+            print("Le nombre mystere est superieur")
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
